@@ -14,6 +14,10 @@ extension UINavigationController {
         switch name {
         case Routes.demo:
             vc = DemoViewController()
+            (vc as! DemoViewController).inject(
+                appProvider: Injector.instance.appProvider,
+                demoViewModel: DemoViewModel(demoRepository: Injector.instance.demoRepository)
+            )
         default:
             return
         }

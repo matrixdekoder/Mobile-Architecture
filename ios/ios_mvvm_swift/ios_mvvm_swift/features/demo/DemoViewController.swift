@@ -12,6 +12,7 @@ import RxSwift
 class DemoViewController: UIViewController {
     
     var disposeBag: DisposeBag = DisposeBag()
+    var appProvider: AppProvider!
     var demoViewModel: DemoViewModel!
     
     @IBOutlet weak var lbGLobalCountNumber: UILabel!
@@ -21,10 +22,22 @@ class DemoViewController: UIViewController {
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnBack: UIButton!
     
+    func inject(appProvider: AppProvider, demoViewModel: DemoViewModel) {
+        self.appProvider = appProvider
+        self.demoViewModel = demoViewModel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        demoViewModel = DemoViewModel()
-        let d = demoViewModel.count.subscribe(
+        appProvider.count.subscribe(onNext: {
+            (newNumber) in
+            self.lbGLobalCountNumber.text = String(newNumber)
+        }, onError: {
+            (error) in
+            print(error)
+        }).disposed(by: disposeBag)
+        
+        demoViewModel.count.subscribe(
             onNext: {
                 (newNumber) in
                 self.lbCountNumber.text = String(newNumber)
@@ -32,9 +45,8 @@ class DemoViewController: UIViewController {
             onError: {
                 (error) in
                 print(error)
-        })
-        d.disposed(by: disposeBag)
-        
+        }).disposed(by: disposeBag)
+        btnGlobalIncrease.addTarget(self, action: #selector(globalIncrease), for: .touchUpInside)
         btnIncrease.addTarget(self, action: #selector(increase), for: .touchUpInside)
         btnNext.addTarget(self, action: #selector(goToDemo), for: .touchUpInside)
         btnBack.addTarget(self, action: #selector(back), for: .touchUpInside)
@@ -42,6 +54,15 @@ class DemoViewController: UIViewController {
     
     @objc func goToDemo() {
         navigationController?.to(name: Routes.demo)
+    }
+    
+    @objc func globalIncrease() {
+        do {
+            let count = try appProvider.count.value()
+            appProvider.count.onNext(count+1)
+        } catch {
+            
+        }
     }
     
     @objc func increase() {

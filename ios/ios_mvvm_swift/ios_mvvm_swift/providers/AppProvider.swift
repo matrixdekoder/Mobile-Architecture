@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import RxSwift
 
 
 class AppProvider {
+    private let _count = BehaviorSubject<Int>(value: 0);
     
+    var count: BehaviorSubject<Int> {
+        get { return _count }
+    }
 }
