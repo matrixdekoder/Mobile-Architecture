@@ -13,8 +13,8 @@ import android.widget.TextView
 import com.phamnhuvu.android_mvvm_live_kotlin.R
 import com.phamnhuvu.android_mvvm_live_kotlin.ViewModelFactory
 import com.phamnhuvu.android_mvvm_live_kotlin.data.repositories.DemoRepository
+import com.phamnhuvu.android_mvvm_live_kotlin.extensions.goTo
 import com.phamnhuvu.android_mvvm_live_kotlin.providers.AppProvider
-import com.phamnhuvu.android_mvvm_live_kotlin.statics.Navigator
 import com.phamnhuvu.android_mvvm_live_kotlin.statics.Routes
 
 class DemoFragment : Fragment() {
@@ -45,7 +45,7 @@ class DemoFragment : Fragment() {
         val countObservable = Observer<Int> { newNumber -> tvCountNumber.text = newNumber.toString() }
         mViewModel.count.observe(this, countObservable)
         btnIncrease.setOnClickListener { mViewModel.increase(1) }
-        btnNext.setOnClickListener { Navigator.to(fragmentManager, Routes.demo) }
+        btnNext.setOnClickListener { fragmentManager?.goTo(Routes.demo) }
         return view
     }
 

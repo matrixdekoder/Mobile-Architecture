@@ -16,7 +16,6 @@ class ViewModelFactory : ViewModelProvider.Factory {
     constructor(number: Int) {
     }
 
-
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DemoViewModel::class.java)) {
