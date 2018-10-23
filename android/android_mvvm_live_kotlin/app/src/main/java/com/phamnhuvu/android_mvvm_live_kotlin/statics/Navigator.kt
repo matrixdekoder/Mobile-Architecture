@@ -6,13 +6,11 @@ import com.phamnhuvu.android_mvvm_live_kotlin.R
 import com.phamnhuvu.android_mvvm_live_kotlin.features.demo.DemoFragment
 
 object Navigator {
-    const val next: String = "next"
-
     fun to(fm: FragmentManager?, name: String) {
         val fragment: Fragment
 
         when (name) {
-            next -> fragment = DemoFragment()
+            Routes.demo -> fragment = DemoFragment()
             else -> return;
         }
 
