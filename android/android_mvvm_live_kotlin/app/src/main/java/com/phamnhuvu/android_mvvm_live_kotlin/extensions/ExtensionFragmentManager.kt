@@ -7,15 +7,15 @@ import com.phamnhuvu.android_mvvm_live_kotlin.features.demo.DemoFragment
 import com.phamnhuvu.android_mvvm_live_kotlin.statics.Routes
 
 fun FragmentManager.goTo(name: String) {
-    val fragment: Fragment
+  val fragment: Fragment
 
-    when (name) {
-        Routes.demo -> fragment = DemoFragment()
-        else -> return;
-    }
+  when (name) {
+    Routes.demo -> fragment = DemoFragment()
+    else -> return;
+  }
 
-    beginTransaction()
-        .replace(R.id.mainFrame, fragment)
-        .addToBackStack(null)
-        .commit()
+  beginTransaction()
+    .replace(R.id.mainFrame, fragment)
+    .addToBackStack(null)
+    .commit()
 }

@@ -7,21 +7,21 @@ import com.phamnhuvu.android_mvvm_live_kotlin.features.demo.DemoViewModel
 
 class ViewModelFactory : ViewModelProvider.Factory {
 
-    private lateinit var demoRepository: DemoRepository
+  private lateinit var demoRepository: DemoRepository
 
-    constructor(demoRepository: DemoRepository) {
-        this.demoRepository = demoRepository
-    }
+  constructor(demoRepository: DemoRepository) {
+    this.demoRepository = demoRepository
+  }
 
-    constructor(number: Int) {
-    }
+  constructor(number: Int) {
+  }
 
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(DemoViewModel::class.java)) {
-            return DemoViewModel(demoRepository) as T
-        } else {
-            throw IllegalArgumentException("Unknown ViewModel class");
-        }
+  @Suppress("UNCHECKED_CAST")
+  override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    if (modelClass.isAssignableFrom(DemoViewModel::class.java)) {
+      return DemoViewModel(demoRepository) as T
+    } else {
+      throw IllegalArgumentException("Unknown ViewModel class");
     }
+  }
 }
