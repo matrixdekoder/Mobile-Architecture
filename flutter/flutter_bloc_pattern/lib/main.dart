@@ -6,7 +6,7 @@ import 'package:flutter_bloc_pattern/generated/i18n.dart';
 import 'package:flutter_bloc_pattern/injector.dart';
 import 'package:flutter_bloc_pattern/providers/app/app_bloc.dart';
 import 'package:flutter_bloc_pattern/providers/app/app_provider.dart';
-import 'package:flutter_bloc_pattern/static/routes.dart';
+import 'package:flutter_bloc_pattern/statics/routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(
