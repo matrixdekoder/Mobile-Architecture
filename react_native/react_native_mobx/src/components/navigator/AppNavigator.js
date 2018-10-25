@@ -10,16 +10,14 @@ const AppNavigator = createStackNavigator(
       screen: (props) => <DemoScreen
         {...props}
         appStoreProvider={injector.appStoreProvider}
-        demoRepository={injector.demoRepository}
-        demoStore={new DemoStore()}
+        demoStore={new DemoStore(injector.demoRepository)}
       />,
     },
     Demo: {
       screen: (props) => <DemoScreen
         {...props}
         appStoreProvider={injector.appStoreProvider}
-        demoRepository={injector.demoRepository}
-        demoStore={new DemoStore()}
+        demoStore={new DemoStore(injector.demoRepository)}
       />,
     }
   },

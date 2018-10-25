@@ -4,12 +4,6 @@ import AppStoreProvider from "./providers/AppStoreProvider";
 
 class Injector {
 
-
-
-  // constructor(appStoreProvider) {
-  //   this._appStoreProvider = appStoreProvider;
-  // }
-
   get appStoreProvider() {
     return this._appStoreProvider;
   }
@@ -28,7 +22,7 @@ class Injector {
 }
 
 const injector = new Injector();
-injector.appStoreProvider = new AppStoreProvider();
 injector.demoRepository = new DemoRepository();
+injector.appStoreProvider = new AppStoreProvider(injector.demoRepository);
 
 export default injector;

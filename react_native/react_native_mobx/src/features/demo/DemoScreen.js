@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  Button,
-  View
-} from 'react-native';
+import {Button, Text, View} from 'react-native';
 import {observer} from "mobx-react/native";
-import DemoStore from "./DemoStore"
 import Routes from "../../statics/Routes"
 
 @observer
