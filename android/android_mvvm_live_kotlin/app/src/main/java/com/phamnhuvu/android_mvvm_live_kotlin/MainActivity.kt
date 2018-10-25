@@ -2,7 +2,9 @@ package com.phamnhuvu.android_mvvm_live_kotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.phamnhuvu.android_mvvm_live_kotlin.features.demo.DemoFragment
+import com.phamnhuvu.android_mvvm_live_kotlin.data.repositories.DemoRepository
+import com.phamnhuvu.android_mvvm_live_kotlin.extensions.goTo
+import com.phamnhuvu.android_mvvm_live_kotlin.statics.Routes
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,8 +13,8 @@ class MainActivity : AppCompatActivity() {
     setContentView(R.layout.activity_main)
 
     if (savedInstanceState != null) return
-    supportFragmentManager.beginTransaction()
-      .replace(R.id.mainFrame, DemoFragment())
-      .commit()
+
+    Injector.instance.demoRepository = DemoRepository()
+    supportFragmentManager.goTo(Routes.Initial)
   }
 }

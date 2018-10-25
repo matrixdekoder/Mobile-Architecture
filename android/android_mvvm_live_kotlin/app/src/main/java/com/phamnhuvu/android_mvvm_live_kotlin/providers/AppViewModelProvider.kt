@@ -2,8 +2,9 @@ package com.phamnhuvu.android_mvvm_live_kotlin.providers
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.phamnhuvu.android_mvvm_live_kotlin.data.repositories.DemoRepository
 
-class AppProvider : ViewModel() {
+class AppViewModelProvider(demoRepository: DemoRepository) : ViewModel() {
   val count: MutableLiveData<Int> by lazy {
     MutableLiveData<Int>()
   }
