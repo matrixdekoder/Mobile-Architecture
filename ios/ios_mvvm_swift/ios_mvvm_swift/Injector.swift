@@ -9,20 +9,20 @@
 import Foundation
 
 class Injector {
-    private var _appProvider: AppProvider!
-    private var _demoRepository: DemoRepository!
-    
-    static let instance = Injector()
     
     private init() {}
+    static let instance = Injector()
+    
+    private var _appViewModelProvider: AppViewModelProvider!
+    private var _demoRepository: DemoRepository!
     
     var demoRepository: DemoRepository {
         get { return self._demoRepository }
         set(repository) { self._demoRepository = repository }
     }
     
-    var appProvider: AppProvider {
-        get { return self._appProvider }
-        set(provider) { self._appProvider = provider}
+    var appViewModelProvider: AppViewModelProvider {
+        get { return self._appViewModelProvider }
+        set(provider) { self._appViewModelProvider = provider}
     }
 }

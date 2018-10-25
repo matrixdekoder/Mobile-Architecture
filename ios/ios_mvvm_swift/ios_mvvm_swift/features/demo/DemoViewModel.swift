@@ -10,14 +10,15 @@ import Foundation
 import RxSwift
 
 class DemoViewModel {
+    
+    init(demoRepository: DemoRepository) {
+        self._demoRepository = demoRepository
+    }
+    
     private let _demoRepository: DemoRepository
     
     private let _count = BehaviorSubject<Int>(value: 0);
     var count: BehaviorSubject<Int> {
         get { return _count }
-    }
-    
-    init(demoRepository: DemoRepository) {
-        self._demoRepository = demoRepository
     }
 }

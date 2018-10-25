@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 
-class AppProvider {
+class AppViewModelProvider {
     private let _count = BehaviorSubject<Int>(value: 0);
     
     var count: BehaviorSubject<Int> {

@@ -12,7 +12,7 @@ import RxSwift
 class DemoViewController: UIViewController {
     
     var disposeBag: DisposeBag = DisposeBag()
-    var appProvider: AppProvider!
+    var appViewModelProvider: AppViewModelProvider!
     var demoViewModel: DemoViewModel!
     
     @IBOutlet weak var lbGLobalCountNumber: UILabel!
@@ -22,14 +22,14 @@ class DemoViewController: UIViewController {
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnBack: UIButton!
     
-    func inject(appProvider: AppProvider, demoViewModel: DemoViewModel) {
-        self.appProvider = appProvider
+    func inject(appViewModelProvider: AppViewModelProvider, demoViewModel: DemoViewModel) {
+        self.appViewModelProvider = appViewModelProvider
         self.demoViewModel = demoViewModel
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appProvider.count.subscribe(onNext: {
+        appViewModelProvider.count.subscribe(onNext: {
             (newNumber) in
             self.lbGLobalCountNumber.text = String(newNumber)
         }, onError: {
@@ -58,8 +58,8 @@ class DemoViewController: UIViewController {
     
     @objc func globalIncrease() {
         do {
-            let count = try appProvider.count.value()
-            appProvider.count.onNext(count+1)
+            let count = try appViewModelProvider.count.value()
+            appViewModelProvider.count.onNext(count+1)
         } catch {
             
         }

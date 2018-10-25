@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = self.window ?? UIWindow()
         
         Injector.instance.demoRepository = DemoRepository()
-        Injector.instance.appProvider = AppProvider()
+        Injector.instance.appViewModelProvider = AppViewModelProvider()
         
         let root = DemoViewController()
         root.inject(
-            appProvider: Injector.instance.appProvider,
+            appViewModelProvider: Injector.instance.appViewModelProvider,
             demoViewModel: DemoViewModel(demoRepository: Injector.instance.demoRepository))
         let navigationController = UINavigationController(rootViewController: root)
         navigationController.isNavigationBarHidden = true
