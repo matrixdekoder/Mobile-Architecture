@@ -21,6 +21,7 @@ class S implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
+  String get hello => "Hello Demo";
 }
 
 class vi extends S {
@@ -29,6 +30,8 @@ class vi extends S {
    @override
   TextDirection get textDirection => TextDirection.ltr;
 
+  @override
+  String get hello => "Xin chào Demo";
 }
 
 class en extends S {
