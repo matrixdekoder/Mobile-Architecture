@@ -66,12 +66,7 @@ class DemoViewController: UIViewController {
     }
     
     @objc func increase() {
-        do {
-            let count = try demoViewModel.count.value()
-            demoViewModel.count.onNext(count+1)
-        } catch {
-            
-        }
+        demoViewModel.increase(number: 1)
     }
     
     @objc func back() {

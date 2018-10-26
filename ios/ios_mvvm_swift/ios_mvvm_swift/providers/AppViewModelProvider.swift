@@ -16,4 +16,11 @@ class AppViewModelProvider {
     var count: BehaviorSubject<Int> {
         get { return _count }
     }
+    
+    func increase(number: Int) {
+        do {
+            let count = try _count.value()
+            _count.onNext(count+number)
+        } catch {}
+    }
 }
