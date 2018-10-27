@@ -1,2 +1,2 @@
 # Mobile Architecture
-Architecture for Android, iOS, React Native, Flutter
+Mobile Architecture for Android, iOS, React Native, Flutter
