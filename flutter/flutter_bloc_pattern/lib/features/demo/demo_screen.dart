@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_pattern/base_state.dart';
 import 'package:flutter_bloc_pattern/features/demo/demo_bloc.dart';
+import 'package:flutter_bloc_pattern/generated/i18n.dart';
 import 'package:flutter_bloc_pattern/providers/app/app_bloc.dart';
 import 'package:flutter_bloc_pattern/statics/routes.dart';
 
 class DemoScreen extends StatefulWidget {
+  final S i18n;
   final AppBloc appBloc;
   final DemoBloc demoBloc;
 
-  const DemoScreen({Key key, @required this.demoBloc, @required this.appBloc})
+  const DemoScreen({Key key, @required this.demoBloc, @required this.appBloc, this.i18n})
       : super(key: key);
 
   @override
   _DemoScreenState createState() => _DemoScreenState();
 }
 
-class _DemoScreenState extends BaseState<DemoScreen> {
-
+class _DemoScreenState extends State<DemoScreen> {
+  S i18n;
   AppBloc appBloc;
+  DemoBloc demoBloc;
 
   @override
   void initState() {
     super.initState();
+    i18n = widget.i18n;
     appBloc = widget.appBloc;
-    localBloc = widget.demoBloc;
+    demoBloc = widget.demoBloc;
   }
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -49,7 +51,7 @@ class _DemoScreenState extends BaseState<DemoScreen> {
               ),
               StreamBuilder(
                 initialData: 0,
-                stream: localBloc.localCount,
+                stream: demoBloc.localCount,
                 builder: (context, AsyncSnapshot<int> snapshot) {
                   print("build child Local");
                   return Text("Local State ${snapshot.data}");
@@ -57,7 +59,7 @@ class _DemoScreenState extends BaseState<DemoScreen> {
               ),
               RaisedButton(
                 child: Text("Increase Local State"),
-                onPressed: () => localBloc.increase(1),
+                onPressed: () => demoBloc.increase(1),
               ),
               RaisedButton(
                 child: Text("Move"),
@@ -69,4 +71,12 @@ class _DemoScreenState extends BaseState<DemoScreen> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    demoBloc?.dispose();
+    super.dispose();
+  }
+
+
 }

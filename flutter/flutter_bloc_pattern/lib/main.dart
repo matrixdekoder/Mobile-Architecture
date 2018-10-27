@@ -23,12 +23,14 @@ void main() => runApp(
             supportedLocales: S.delegate.supportedLocales,
             routes: {
               Routes.initial: (context) => DemoScreen(
+                    i18n: S.of(context),
                     appBloc: AppProvider.of(context),
                     demoBloc: DemoBloc(Injector.of(context).demoRepository),
                   ),
               Routes.next: (context) => DemoScreen(
-                appBloc: AppProvider.of(context),
-                demoBloc: DemoBloc(Injector.of(context).demoRepository),
+                    i18n: S.of(context),
+                    appBloc: AppProvider.of(context),
+                    demoBloc: DemoBloc(Injector.of(context).demoRepository),
                   ),
             },
             initialRoute: Routes.initial,

@@ -12,7 +12,6 @@ class AppBloc implements BaseBloc {
 
   _increase(int number) {
     _countSubject.value += number;
-    _countSubject.sink.add(_countSubject.value);
   }
 
   void dispose() {
