@@ -1,3 +1,3 @@
 iOS MVVM Architecture with Swift
 
-![](https://lh5.googleusercontent.com/cOH9E2tvBj_mBqjyV6nNjMK0athRAi25za4XI8bZ3C0tcH5LeRBW0DVUVDTaoD52tynFpuvF-61ciIC5a_dg=w2552-h1810-rw)
+![](https://lh5.googleusercontent.com/SoW8wNFmrxrI1nbyBdt_NTnW8UwgZ06GjJSUPwi2UoYsWtPy_aEHlZoOErn78oZKi2tiWyTg4U8X8ROSTm-n=w2552-h1810-rw)
