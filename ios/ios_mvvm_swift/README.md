@@ -9,7 +9,7 @@ iOS MVVM Architecture with Swift
   - Containing features in app.
   - Has 2 classes per features are: 
     - ViewController: The class which present UI user can **visible and interact**.
-    - ViewModel: The class which **stores Fragment' local state** and can **access Repositories to get data source**.
+    - ViewModel: The class which **stores ViewController' local state** and can **access Repositories to get data source**.
 
 * **Modules folder**:
   - Containing API modules for a single responsibility such as: service, social login api, v.v...
