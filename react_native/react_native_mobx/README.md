@@ -12,7 +12,7 @@ React Native Architecture with Mobx
     - Store: The class which **stores Component' local state** and can **access Repositories to get data source**.
 
 * **Modules folder**:
-  - Containing API modules for a sigle responsibility such as: service, social login api, v.v...
+  - Containing API modules for a single responsibility such as: service, social login api, v.v...
   
 * **Providers folder**:
   - Containing StoreProvider classes which **store global state**, can **access Repositories to get data source** and **is accessed from 2 or features**
