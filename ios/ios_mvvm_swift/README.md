@@ -12,7 +12,7 @@ iOS MVVM Architecture with Swift
     - ViewModel: The class which **stores Fragment' local state** and can **access Repositories to get data source**.
 
 * **Modules folder**:
-  - Containing API modules for a sigle responsibility such as: service, social login api, v.v...
+  - Containing API modules for a single responsibility such as: service, social login api, v.v...
   
 * **Providers folder**:
   - Containing ViewModelProvider classes which **store global state**, can **access Repositories to get data source** and **is accessed from 2 or features**
