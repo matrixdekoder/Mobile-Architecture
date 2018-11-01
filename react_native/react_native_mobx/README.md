@@ -8,7 +8,7 @@ React Native Architecture with Mobx
 * **Features folder**:
   - Containing features in app.
   - Has 2 classes per features are: 
-    - Components: The class which present UI user can **visible and interact**.
+    - Component: The class which present UI user can **visible and interact**.
     - Store: The class which **stores Component' local state** and can **access Repositories to get data source**.
 
 * **Modules folder**:
