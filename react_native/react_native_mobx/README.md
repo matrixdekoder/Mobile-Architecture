@@ -1,4 +1,4 @@
-React Native Architecture with Mobx
+React Native with Mobx
 
 ### Project Structure
 * **Data folder**: Containing 2 another folder are:
