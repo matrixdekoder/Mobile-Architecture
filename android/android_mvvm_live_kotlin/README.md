@@ -1,4 +1,4 @@
-# Android MVVM Architecture with LiveData
+# Android MVVM with LiveData
 
 ### Project Structure
 * **Data folder**: Containing 2 another folder are:
