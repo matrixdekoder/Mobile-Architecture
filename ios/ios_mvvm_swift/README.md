@@ -1,4 +1,4 @@
-iOS MVVM Architecture with Swift
+iOS MVVM with Swift
 
 ### Project Structure
 * **Data folder**: Containing 2 another folder are:
