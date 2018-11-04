@@ -9,12 +9,13 @@
 
 
     <com.phamnhuvu.dosomething.views.BottomBarView
+            android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             app:shadow="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:id="@+id/bottomNavigationView"/>
+    />
 
 </android.support.constraint.ConstraintLayout>

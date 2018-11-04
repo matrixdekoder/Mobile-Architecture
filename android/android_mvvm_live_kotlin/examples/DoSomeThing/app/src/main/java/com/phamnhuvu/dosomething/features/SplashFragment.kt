@@ -2,10 +2,12 @@ package com.phamnhuvu.dosomething.features
 
 
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 
 import com.phamnhuvu.dosomething.R
 
@@ -19,5 +21,11 @@ class SplashFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Handler().postDelayed({
+            Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_mainFragment)
+        }, 1500)
+    }
 
 }

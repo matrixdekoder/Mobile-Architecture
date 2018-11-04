@@ -2,8 +2,10 @@ package com.phamnhuvu.dosomething.views
 
 import android.content.Context
 import android.graphics.*
+import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
+import android.util.Log
 import android.widget.FrameLayout
 import com.phamnhuvu.dosomething.R
 import com.phamnhuvu.dosomething.modules.ConvertDimension
@@ -11,7 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 
 
-class BottomBarView(context: Context?, attrs: AttributeSet?) : FrameLayout(context, attrs) {
+class BottomBarView(context: Context?, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
 
     // Paint
     private var mLeftPaint: Paint = Paint()
@@ -33,7 +35,7 @@ class BottomBarView(context: Context?, attrs: AttributeSet?) : FrameLayout(conte
         setWillNotDraw(false)
         context!!.theme.obtainStyledAttributes(
             attrs,
-            R.styleable.BottomNavigationView,
+            R.styleable.BottomBarView,
             0, 0
         ).apply {
             try {
