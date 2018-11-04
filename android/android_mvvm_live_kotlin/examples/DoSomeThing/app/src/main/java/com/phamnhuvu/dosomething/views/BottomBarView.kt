@@ -36,9 +36,8 @@ class BottomBarView(context: Context?, attrs: AttributeSet?) : FrameLayout(conte
             R.styleable.BottomNavigationView,
             0, 0
         ).apply {
-
             try {
-                mShadow = getBoolean(R.styleable.BottomNavigationView_shadow, false)
+                mShadow = getBoolean(R.styleable.BottomBarView_shadow, false)
             } finally {
                 recycle()
             }
@@ -49,6 +48,7 @@ class BottomBarView(context: Context?, attrs: AttributeSet?) : FrameLayout(conte
         inflater.inflate(R.layout.bottom_bar_view, this, true)
 
         mLeftPaint.color = mMainColor
+
 
         mCentralPaint.color = mMainColor
         mCentralPaint.isAntiAlias = true
