@@ -3,6 +3,7 @@ package com.phamnhuvu.dosomething
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import com.phamnhuvu.dosomething.features.SplashFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,10 +13,9 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState != null) return
 
-        val finalHost = NavHostFragment.create(R.navigation.nav_graph)
+
         supportFragmentManager.beginTransaction()
-            .replace(R.id.nav_host, finalHost)
-            .setPrimaryNavigationFragment(finalHost)
+            .replace(R.id.nav_host, SplashFragment())
             .commit()
     }
 }
