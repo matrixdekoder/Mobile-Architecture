@@ -15,6 +15,6 @@ class MainActivity : AppCompatActivity() {
     if (savedInstanceState != null) return
 
     Injector.instance.demoRepository = DemoRepository()
-    supportFragmentManager.goTo(Routes.Initial)
+    supportFragmentManager.goTo(Routes.INITIAL)
   }
 }

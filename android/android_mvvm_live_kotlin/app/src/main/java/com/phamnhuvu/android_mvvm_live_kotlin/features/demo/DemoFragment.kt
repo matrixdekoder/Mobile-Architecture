@@ -53,7 +53,7 @@ class DemoFragment : Fragment() {
     val countObservable = Observer<Int> { newNumber -> tvCountNumber.text = newNumber.toString() }
     mDemoViewModel.count.observe(this, countObservable)
     btnIncrease.setOnClickListener { mDemoViewModel.increase(1) }
-    btnNext.setOnClickListener { fragmentManager?.goTo(Routes.Demo) }
+    btnNext.setOnClickListener { fragmentManager?.goTo(Routes.DEMO) }
     return view
   }
 
