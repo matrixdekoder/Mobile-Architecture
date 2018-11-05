@@ -1,4 +1,4 @@
-package com.phamnhuvu.android_mvvm_live_kotlin.extensions
+package com.phamnhuvu.android_mvvm_live_kotlin.modules.extensions
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager

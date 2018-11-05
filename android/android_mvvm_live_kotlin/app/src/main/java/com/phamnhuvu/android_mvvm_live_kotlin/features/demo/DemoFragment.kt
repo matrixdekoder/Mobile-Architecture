@@ -14,7 +14,7 @@ import com.phamnhuvu.android_mvvm_live_kotlin.R
 import com.phamnhuvu.android_mvvm_live_kotlin.ViewModelFactory
 import com.phamnhuvu.android_mvvm_live_kotlin.ViewModelProviderFactory
 import com.phamnhuvu.android_mvvm_live_kotlin.data.repositories.DemoRepository
-import com.phamnhuvu.android_mvvm_live_kotlin.extensions.goTo
+import com.phamnhuvu.android_mvvm_live_kotlin.modules.extensions.goTo
 import com.phamnhuvu.android_mvvm_live_kotlin.providers.AppViewModelProvider
 import com.phamnhuvu.android_mvvm_live_kotlin.statics.Routes
 
